@@ -45,8 +45,3 @@ output "fowarding_ports" {
   value       = unifi_port_forward.forward
   description = "Fowarding ports port_fowards['key']"
 }
-
-output "main_network_lan_id" {
-  value       = "60fdb3bb2afa8606884a2e88"
-  description = "This is the Main LAN if created by default by UniFi Netowrk Controller"
-}
