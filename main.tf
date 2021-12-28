@@ -4,7 +4,7 @@ terraform {
     # https://registry.terraform.io/providers/paultyng/unifi/latest/docs
     unifi = {
       source  = "paultyng/unifi"
-      version = ">=0.27.0"
+      version = ">=0.34.0"
     }
   }
 }
