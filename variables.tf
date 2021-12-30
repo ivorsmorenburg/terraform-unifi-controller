@@ -44,6 +44,22 @@ variable "network_configuration" {
     dhcp_start          = optional(string)
     dhcp_stop           = optional(string)
     dhcp_dns            = optional(set(string))
+    dhcpd_boot_enabled  = optional(bool)
+    dhcpd_boot_filename = optional(string)
+    dhcpd_boot_server   = optional(string)
+    igmp_snooping       = optional(bool)
+    ipv6_pd_interface   = optional(string)
+    ipv6_pd_prefixid    = optional(string)
+    ipv6_ra_enable      = optional(bool)
+    ipv6_static_subnet  = optional(string)
+    wan_dns             = optional(set(string))
+    wan_gateway         = optional(string)
+    wan_ip              = optional(string)
+    wan_netmask         = optional(string)
+    wan_networkgroup    = optional(string)
+    wan_type            = optional(string)
+    wan_username        = optional(string)
+    x_wan_password      = optional(string)
   }))
 }
 
@@ -52,23 +68,26 @@ variable "wlan_configuration" {
   type = map(object({
     network_key = optional(string)
 
-    ssid               = string
-    security           = string
-    user_group_id      = string
-    passphrase         = optional(string)
-    ap_group_ids       = optional(list(string))
-    hide_ssid          = optional(bool)
-    is_guest           = optional(bool)
-    mac_filter_enabled = optional(bool)
-    mac_filter_list    = optional(list(string))
-    mac_filter_policy  = optional(string)
-    multicast_enhance  = optional(bool)
-    network_id         = optional(string)
-    no2ghz_oui         = bool
-    radius_profile_id  = optional(string)
-    schedule           = optional(string)
-    site               = optional(string)
-    wlan_band          = optional(string)
+    ssid                      = string
+    security                  = string
+    user_group_id             = string
+    l2_isolation              = optional(bool)
+    minimum_data_rate_2g_kbps = optional(number)
+    minimum_data_rate_5g_kbps = optional(number)
+    passphrase                = optional(string)
+    ap_group_ids              = optional(list(string))
+    hide_ssid                 = optional(bool)
+    is_guest                  = optional(bool)
+    mac_filter_enabled        = optional(bool)
+    mac_filter_list           = optional(list(string))
+    mac_filter_policy         = optional(string)
+    multicast_enhance         = optional(bool)
+    network_id                = optional(string)
+    no2ghz_oui                = bool
+    radius_profile_id         = optional(string)
+    schedule                  = optional(string)
+    site                      = optional(string)
+    wlan_band                 = optional(string)
   }))
 }
 
