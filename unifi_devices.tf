@@ -6,10 +6,6 @@ resource "unifi_device" "ubn_network_device" {
   mac  = each.value.device.mac
   name = each.value.device.name
 
-  lifecycle {
-    create_before_destroy = true
-  }
-
   dynamic "port_override" {
     for_each = {
       for key, port_conf in each.value.device.ports_override != null ? each.value.device.ports_override : {} : key => port_conf

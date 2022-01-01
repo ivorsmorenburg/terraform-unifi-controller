@@ -17,7 +17,7 @@ variable "unifi_site" {
 variable "radius_profile_name" {
   description = "LookUp Radius Id by Name"
   type        = string
-  default = "Default"
+  default     = "Default"
 }
 # UniFi Arguments & Options
 variable "user_speed_groups" {
@@ -66,7 +66,22 @@ variable "network_configuration" {
     x_wan_password      = optional(string)
   }))
 }
-
+variable "unifi_client" {
+  description = "UniFi Client"
+  type = map(object({
+    mac                    = optional(string)
+    name                   = optional(string)
+    allow_existing         = optional(string)
+    blocked                = optional(string)
+    dev_id_override        = optional(string)
+    fixed_ip               = optional(string)
+    network_id             = optional(string)
+    note                   = optional(string)
+    site                   = optional(string)
+    skip_forget_on_destroy = optional(string)
+    user_group_id          = optional(string)
+  }))
+}
 variable "wlan_configuration" {
   description = "Controller WiFi"
   type = map(object({
