@@ -11,6 +11,7 @@ resource "unifi_port_profile" "profile" {
   native_networkconf_id          = each.value.native_networkconf_id
   lldpmed_enabled                = each.value.lldpmed_enabled
   full_duplex                    = each.value.full_duplex
+  name                           = each.value.name
   op_mode                        = each.value.op_mode
   poe_mode                       = each.value.poe_mode
   port_security_enabled          = each.value.port_security_enabled

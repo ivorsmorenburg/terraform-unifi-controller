@@ -2,13 +2,13 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_unifi"></a> [unifi](#requirement\_unifi) | >=0.27.0 |
+| <a name="requirement_unifi"></a> [unifi](#requirement\_unifi) | >=0.34.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_unifi"></a> [unifi](#provider\_unifi) | >=0.27.0 |
+| <a name="provider_unifi"></a> [unifi](#provider\_unifi) | >=0.34.0 |
 
 ## Modules
 

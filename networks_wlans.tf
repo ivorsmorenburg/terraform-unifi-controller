@@ -58,13 +58,11 @@ resource "unifi_wlan" "wlan_configuration" {
   network_id                = each.value.network_id
   no2ghz_oui                = each.value.no2ghz_oui
   radius_profile_id         = each.value.radius_profile_id
-  /* schedule           = each.value.schedule */
-  site      = each.value.site
-  wlan_band = try(each.value.wlan_bands, "both")
-  # enable WPA2/WPA3 support
-  wpa3_support    = try(each.value.wpa3_support, true)
-  wpa3_transition = try(each.value.wpa3_transition, true)
-  pmf_mode        = try(each.value.pmf_mode, "optional")
+  site                      = each.value.site
+  wlan_band                 = try(each.value.wlan_bands, "both")
+  wpa3_support              = try(each.value.wpa3_support, false)
+  wpa3_transition           = try(each.value.wpa3_transition, false)
+  pmf_mode                  = try(each.value.pmf_mode, "optional")
 
   uapsd = try(each.value.uapsd, false)
 

@@ -14,7 +14,11 @@ variable "unifi_site" {
   description = "UniFi Site name and Description and others..."
   type        = map(string)
 }
-
+variable "radius_profile_name" {
+  description = "LookUp Radius Id by Name"
+  type        = string
+  default = "Default"
+}
 # UniFi Arguments & Options
 variable "user_speed_groups" {
   description = "UniFi Site name and Description and others..."
