@@ -33,6 +33,11 @@ resource "unifi_network" "network_configuration" {
   /* ipv6_pd_interface = each.value.ipv6_pd_interface */
 
   dhcp_dns = try(each.value.dhcp_dns, [])
+  lifecycle {
+    ignore_changes = [
+      wan_gateway,
+    ]
+  }
 }
 
 resource "unifi_wlan" "wlan_configuration" {
