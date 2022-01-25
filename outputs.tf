@@ -45,3 +45,8 @@ output "fowarding_ports" {
   value       = unifi_port_forward.forward
   description = "Fowarding ports port_fowards['key']"
 }
+
+output "radius_default_id" {
+  value       = data.unifi_radius_profile.default.id
+  description = "Radius UDM Default"
+}
